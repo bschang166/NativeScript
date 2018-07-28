@@ -9,6 +9,7 @@
   },
   "files": [
     "**/*.d.ts",
+    "**/*.ts",
     "**/*.js",
     "**/platforms/ios/**",
     "**/package.json",
