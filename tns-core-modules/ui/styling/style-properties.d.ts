@@ -1,117 +1,130 @@
-/**
- * @module "ui/styling/style-properties"
- */ /** */
-
+import { Style, CssProperty, CssAnimationProperty, InheritedCssProperty } from "../core/properties";
 import { TransformFunctionsInfo } from "../animation/animation";
-import { Color } from "../../color";
-import { Style, CssProperty, CssAnimationProperty, ShorthandProperty, InheritedCssProperty } from "../core/properties";
-import { Font, FontStyle, FontWeight } from "./font";
-import { Background } from "./background";
 import { dip, px, percent } from "../core/view";
-
-export type LengthDipUnit = { readonly unit: "dip", readonly value: dip };
-export type LengthPxUnit = { readonly unit: "px", readonly value: px };
-export type LengthPercentUnit = { readonly unit: "%", readonly value: percent };
-
-export type Length = "auto" | dip | LengthDipUnit | LengthPxUnit;
-export type PercentLength = "auto" | dip | LengthDipUnit | LengthPxUnit | LengthPercentUnit;
-
-export namespace Length {
-    export function parse(text: string): Length;
-    export function equals(a: Length, b: Length): boolean;
-    /**
-     * Converts Length unit to device pixels.
-     * @param length The Length to convert.
-     * @param auto Value to use for conversion of "auto". By default is Math.NaN.
-     */
-    export function toDevicePixels(length: Length, auto?: number): number;
-    export function convertToString(length: Length): string;
+import { Color } from "../../color";
+import { Font, FontStyle, FontWeight } from "../../ui/styling/font";
+import { Background } from "../../ui/styling/background";
+import { LinearGradient } from "./linear-gradient";
+export declare type LengthDipUnit = {
+    readonly unit: "dip";
+    readonly value: dip;
+};
+export declare type LengthPxUnit = {
+    readonly unit: "px";
+    readonly value: px;
+};
+export declare type LengthPercentUnit = {
+    readonly unit: "%";
+    readonly value: percent;
+};
+export declare type Length = "auto" | dip | LengthDipUnit | LengthPxUnit;
+export declare type PercentLength = "auto" | dip | LengthDipUnit | LengthPxUnit | LengthPercentUnit;
+export declare namespace PercentLength {
+    function parse(fromValue: string | Length): PercentLength;
+    const equals: {
+        (a: PercentLength, b: PercentLength): boolean;
+    };
+    const toDevicePixels: {
+        (length: PercentLength, auto: number, parentAvailableWidth: number): number;
+    };
+    const convertToString: {
+        (length: PercentLength): string;
+    };
 }
-
-export namespace PercentLength {
-    export function parse(text: string): PercentLength;
-    export function equals(a: PercentLength, b: PercentLength): boolean;
-    /**
-     * Converts PercentLength unit to device pixels.
-     * @param length The PercentLength to convert.
-     * @param auto Value to use for conversion of "auto". By default is Math.NaN.
-     * @param parentAvailableWidth Value to use as base when converting percent unit. By default is Math.NaN.
-     */
-    export function toDevicePixels(length: PercentLength, auto?: number, parentAvailableWidth?: px): number;
-    export function convertToString(length: PercentLength): string;
+export declare namespace Length {
+    function parse(fromValue: string | Length): Length;
+    const equals: {
+        (a: Length, b: Length): boolean;
+    };
+    const toDevicePixels: {
+        (length: Length, auto?: number): number;
+    };
+    const convertToString: {
+        (length: Length): string;
+    };
 }
-
-export const zeroLength: Length;
-
-export const rotateProperty: CssAnimationProperty<Style, number>;
-export const scaleXProperty: CssAnimationProperty<Style, number>;
-export const scaleYProperty: CssAnimationProperty<Style, number>;
-export const translateXProperty: CssAnimationProperty<Style, dip>;
-export const translateYProperty: CssAnimationProperty<Style, dip>;
-
-export function transformConverter(text: string): TransformFunctionsInfo;
-
-export const clipPathProperty: CssProperty<Style, string>;
-export const colorProperty: InheritedCssProperty<Style, Color>;
-
-export const backgroundProperty: ShorthandProperty<Style, string>;
-export const backgroundColorProperty: CssAnimationProperty<Style, Color>;
-export const backgroundImageProperty: CssProperty<Style, string>;
-export const backgroundRepeatProperty: CssProperty<Style, BackgroundRepeat>;
-export const backgroundSizeProperty: CssProperty<Style, string>;
-export const backgroundPositionProperty: CssProperty<Style, string>;
-
-export const borderColorProperty: ShorthandProperty<Style, string | Color>;
-export const borderTopColorProperty: CssProperty<Style, Color>;
-export const borderRightColorProperty: CssProperty<Style, Color>;
-export const borderBottomColorProperty: CssProperty<Style, Color>;
-export const borderLeftColorProperty: CssProperty<Style, Color>;
-
-export const borderWidthProperty: ShorthandProperty<Style, string | Length>;
-export const borderTopWidthProperty: CssProperty<Style, Length>;
-export const borderRightWidthProperty: CssProperty<Style, Length>;
-export const borderBottomWidthProperty: CssProperty<Style, Length>;
-export const borderLeftWidthProperty: CssProperty<Style, Length>;
-
-export const borderRadiusProperty: ShorthandProperty<Style, string | Length>;
-export const borderTopLeftRadiusProperty: CssProperty<Style, Length>;
-export const borderTopRightRadiusProperty: CssProperty<Style, Length>;
-export const borderBottomRightRadiusProperty: CssProperty<Style, Length>;
-export const borderBottomLeftRadiusProperty: CssProperty<Style, Length>;
-
-export const zIndexProperty: CssProperty<Style, number>;
-export const visibilityProperty: CssProperty<Style, Visibility>;
-export const opacityProperty: CssAnimationProperty<Style, number>;
-
-export const minWidthProperty: CssProperty<Style, dip | LengthDipUnit | LengthPxUnit>;
-export const minHeightProperty: CssProperty<Style, dip | LengthDipUnit | LengthPxUnit>;
-export const widthProperty: CssProperty<Style, PercentLength>;
-export const heightProperty: CssProperty<Style, PercentLength>;
-export const lineHeightProperty: CssProperty<Style, number>;
-export const marginProperty: ShorthandProperty<Style, string | PercentLength>;
-export const marginLeftProperty: CssProperty<Style, PercentLength>;
-export const marginRightProperty: CssProperty<Style, PercentLength>;
-export const marginTopProperty: CssProperty<Style, PercentLength>;
-export const marginBottomProperty: CssProperty<Style, PercentLength>;
-
-export const paddingProperty: ShorthandProperty<Style, string | Length>;
-export const paddingLeftProperty: CssProperty<Style, Length>;
-export const paddingRightProperty: CssProperty<Style, Length>;
-export const paddingTopProperty: CssProperty<Style, Length>;
-export const paddingBottomProperty: CssProperty<Style, Length>;
-
-export const horizontalAlignmentProperty: CssProperty<Style, HorizontalAlignment>;
-export const verticalAlignmentProperty: CssProperty<Style, VerticalAlignment>;
-
-export const fontSizeProperty: InheritedCssProperty<Style, number>;
-export const fontFamilyProperty: InheritedCssProperty<Style, string>;
-export const fontStyleProperty: InheritedCssProperty<Style, FontStyle>;
-export const fontWeightProperty: InheritedCssProperty<Style, FontWeight>;
-
-export const backgroundInternalProperty: CssProperty<Style, Background>;
-export const fontInternalProperty: InheritedCssProperty<Style, Font>;
-
-export type BackgroundRepeat = "repeat" | "repeat-x" | "repeat-y" | "no-repeat";
-export type Visibility = "visible" | "hidden" | "collapse";
-export type HorizontalAlignment = "left" | "center" | "right" | "stretch";
-export type VerticalAlignment = "top" | "middle" | "bottom" | "stretch";
+export declare const zeroLength: Length;
+export declare const minWidthProperty: CssProperty<Style, Length>;
+export declare const minHeightProperty: CssProperty<Style, Length>;
+export declare const widthProperty: CssProperty<Style, PercentLength>;
+export declare const heightProperty: CssProperty<Style, PercentLength>;
+export declare const marginLeftProperty: CssProperty<Style, PercentLength>;
+export declare const marginRightProperty: CssProperty<Style, PercentLength>;
+export declare const marginTopProperty: CssProperty<Style, PercentLength>;
+export declare const marginBottomProperty: CssProperty<Style, PercentLength>;
+export declare const paddingLeftProperty: CssProperty<Style, Length>;
+export declare const paddingRightProperty: CssProperty<Style, Length>;
+export declare const paddingTopProperty: CssProperty<Style, Length>;
+export declare const paddingBottomProperty: CssProperty<Style, Length>;
+export declare type HorizontalAlignment = "left" | "center" | "right" | "stretch";
+export declare namespace HorizontalAlignment {
+    const LEFT: "left";
+    const CENTER: "center";
+    const RIGHT: "right";
+    const STRETCH: "stretch";
+    const isValid: (value: any) => value is HorizontalAlignment;
+    const parse: (value: any) => HorizontalAlignment;
+}
+export declare const horizontalAlignmentProperty: CssProperty<Style, HorizontalAlignment>;
+export declare type VerticalAlignment = "top" | "middle" | "bottom" | "stretch";
+export declare namespace VerticalAlignment {
+    const TOP: "top";
+    const MIDDLE: "middle";
+    const BOTTOM: "bottom";
+    const STRETCH: "stretch";
+    const isValid: (value: any) => value is VerticalAlignment;
+    const parse: (value: string) => VerticalAlignment;
+}
+export declare const verticalAlignmentProperty: CssProperty<Style, VerticalAlignment>;
+export declare const rotateProperty: CssAnimationProperty<Style, number>;
+export declare const scaleXProperty: CssAnimationProperty<Style, number>;
+export declare const scaleYProperty: CssAnimationProperty<Style, number>;
+export declare const translateXProperty: CssAnimationProperty<Style, number>;
+export declare const translateYProperty: CssAnimationProperty<Style, number>;
+export declare function transformConverter(text: string): TransformFunctionsInfo;
+export declare const backgroundInternalProperty: CssProperty<Style, Background>;
+export declare const backgroundImageProperty: CssProperty<Style, string | LinearGradient>;
+export declare const backgroundColorProperty: CssAnimationProperty<Style, Color>;
+export declare type BackgroundRepeat = "repeat" | "repeat-x" | "repeat-y" | "no-repeat";
+export declare namespace BackgroundRepeat {
+    const REPEAT: "repeat";
+    const REPEAT_X: "repeat-x";
+    const REPEAT_Y: "repeat-y";
+    const NO_REPEAT: "no-repeat";
+    const isValid: (value: any) => value is BackgroundRepeat;
+    const parse: (value: any) => BackgroundRepeat;
+}
+export declare const backgroundRepeatProperty: CssProperty<Style, BackgroundRepeat>;
+export declare const backgroundSizeProperty: CssProperty<Style, string>;
+export declare const backgroundPositionProperty: CssProperty<Style, string>;
+export declare const borderTopColorProperty: CssProperty<Style, Color>;
+export declare const borderRightColorProperty: CssProperty<Style, Color>;
+export declare const borderBottomColorProperty: CssProperty<Style, Color>;
+export declare const borderLeftColorProperty: CssProperty<Style, Color>;
+export declare const borderTopWidthProperty: CssProperty<Style, Length>;
+export declare const borderRightWidthProperty: CssProperty<Style, Length>;
+export declare const borderBottomWidthProperty: CssProperty<Style, Length>;
+export declare const borderLeftWidthProperty: CssProperty<Style, Length>;
+export declare const borderTopLeftRadiusProperty: CssProperty<Style, Length>;
+export declare const borderTopRightRadiusProperty: CssProperty<Style, Length>;
+export declare const borderBottomRightRadiusProperty: CssProperty<Style, Length>;
+export declare const borderBottomLeftRadiusProperty: CssProperty<Style, Length>;
+export declare const clipPathProperty: CssProperty<Style, string>;
+export declare const zIndexProperty: CssProperty<Style, number>;
+export declare const opacityProperty: CssAnimationProperty<Style, number>;
+export declare const colorProperty: InheritedCssProperty<Style, Color>;
+export declare const fontInternalProperty: CssProperty<Style, Font>;
+export declare const fontFamilyProperty: InheritedCssProperty<Style, string>;
+export declare const fontSizeProperty: InheritedCssProperty<Style, number>;
+export declare const fontStyleProperty: InheritedCssProperty<Style, FontStyle>;
+export declare const fontWeightProperty: InheritedCssProperty<Style, FontWeight>;
+export declare type Visibility = "visible" | "hidden" | "collapse";
+export declare namespace Visibility {
+    const VISIBLE: "visible";
+    const HIDDEN: "hidden";
+    const COLLAPSE: "collapse";
+    const isValid: (value: any) => value is Visibility;
+    const parse: (value: string) => Visibility;
+}
+export declare const visibilityProperty: CssProperty<Style, Visibility>;
+//# sourceMappingURL=style-properties.d.ts.map

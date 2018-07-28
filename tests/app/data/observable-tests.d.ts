@@ -1,0 +1,28 @@
+export declare var test_Observable_Constructor: () => void;
+export declare var tests_DummyTestForCodeSnippet: () => void;
+export declare var test_Observable_Members: () => void;
+export declare var test_Observable_UpdateAnotherPropertyWithinChangedCallback: () => void;
+export declare var test_Observable_addEventListener_SingleEvent: () => void;
+export declare var test_Observable_addEventListener_MultipleEvents: () => void;
+export declare var test_Observable_addEventListener_MultipleEvents_ShouldTrim: () => void;
+export declare var test_Observable_addEventListener_MultipleCallbacks: () => void;
+export declare var test_Observable_addEventListener_MultipleCallbacks_MultipleEvents: () => void;
+export declare var test_Observable_removeEventListener_SingleEvent_SingleCallback: () => void;
+export declare var test_Observable_removeEventListener_SingleEvent_MultipleCallbacks: () => void;
+export declare var test_Observable_removeEventListener_MutlipleEvents_SingleCallback: () => void;
+export declare var test_Observable_removeEventListener_SingleEvent_NoCallbackSpecified: () => void;
+export declare var test_Observable_WhenCreatedWithJSON_PropertyChangedWithDotNotation_RaisesPropertyChangedEvent: () => void;
+export declare var test_Observable_WhenCreatedWithJSON_PropertyChangedWithBracketsNotation_RaisesPropertyChangedEvent: () => void;
+export declare var test_AddingTwoEventHandlersAndRemovingWithinHandlerShouldRaiseAllEvents: () => void;
+export declare var test_ObservableCreatedWithJSON_shouldDistinguishSeparateObjects: () => void;
+export declare var test_ObservablesCreatedWithJSON_shouldNotInterfereWithOneAnother: () => void;
+export declare function test_ObservablesCreatedWithJSON_shouldNotEmitTwoTimesPropertyChangeEvent(): void;
+export declare function test_ObservableShouldEmitPropertyChangeWithSameObjectUsingWrappedValue(): void;
+export declare function test_CorrectEventArgsWhenWrappedValueIsUsed(): void;
+export declare function test_CorrectPropertyValueAfterUsingWrappedValue(): void;
+export declare function test_NestedObservablesWithObservableArrayShouldNotCrash(): void;
+export declare function test_NestedObservableWithNullShouldNotCrash(): void;
+export declare function test_get_set_on_observables_fromObject_without_property_in_json(): void;
+export declare function test_get_set_on_observables_fromObject_with_property_in_json(): void;
+export declare function test_fromObjectRecursive_does_not_override_source_object_property(): void;
+//# sourceMappingURL=observable-tests.d.ts.map

@@ -1,112 +1,67 @@
-/**
- * @module "ui/animation/keyframe-animation"
- */ /** */
-
-import { View } from "../core/view";
-
-export declare const ANIMATION_PROPERTIES;
-
-export interface Keyframes {
+import { Keyframes as KeyframesDefinition, UnparsedKeyframe as UnparsedKeyframeDefinition, KeyframeDeclaration as KeyframeDeclarationDefinition, KeyframeInfo as KeyframeInfoDefinition, KeyframeAnimationInfo as KeyframeAnimationInfoDefinition, KeyframeAnimation as KeyframeAnimationDefinition } from "./keyframe-animation";
+import { View, Color } from "../core/view";
+export declare class Keyframes implements KeyframesDefinition {
     name: string;
     keyframes: Array<UnparsedKeyframe>;
 }
-
-export interface UnparsedKeyframe {
+export declare class UnparsedKeyframe implements UnparsedKeyframeDefinition {
     values: Array<any>;
     declarations: Array<KeyframeDeclaration>;
 }
-
-export interface KeyframeDeclaration {
+export declare class KeyframeDeclaration implements KeyframeDeclarationDefinition {
     property: string;
     value: any;
 }
-
-export interface KeyframeInfo {
+export declare class KeyframeInfo implements KeyframeInfoDefinition {
     duration: number;
     declarations: Array<KeyframeDeclaration>;
     curve?: any;
 }
-
-/**
- * Defines animation options for the View.animate method.
- */
-export class KeyframeAnimationInfo {
-
-    /**
-     * Return animation keyframes.
-     */
+export declare class KeyframeAnimationInfo implements KeyframeAnimationInfoDefinition {
     keyframes: Array<KeyframeInfo>;
-
-    /**
-     * The animation name.
-     */
     name?: string;
-
-    /**
-     * The length of the animation in milliseconds. The default duration is 300 milliseconds.
-     */
     duration?: number;
-
-    /**
-     * The amount of time, in milliseconds, to delay starting the animation.
-     */
     delay?: number;
-
-    /**
-     * Specifies how many times the animation should be played. Default is 1.
-     * iOS animations support fractional iterations, i.e. 1.5.
-     * To repeat an animation infinitely, use Number.POSITIVE_INFINITY
-     */
     iterations?: number;
-
-    /**
-     * An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](../modules/_ui_enums_.animationcurve.html).
-     * Alternatively, you can pass an instance of type UIViewAnimationCurve for iOS or android.animation.TimeInterpolator for Android.
-     */
     curve?: any;
-
-    /**
-     * Determines whether the animation values will be applied on the animated object after the animation finishes.
-     */
-    isForwards: boolean;
-
-    /**
-     * If true the animation will be played backwards.
-     */
+    isForwards?: boolean;
     isReverse?: boolean;
 }
-
-export class KeyframeAnimation {
-
-    /**
-     * The amount of time, in milliseconds, to delay starting the animation.
-     */
-    delay: number;
-
-    /**
-     * Specifies how many times the animation should be played. Default is 1.
-     * iOS animations support fractional iterations, i.e. 1.5.
-     * To repeat an animation infinitely, use Number.POSITIVE_INFINITY
-     */
-    iterations: number;
-
-    /**
-     * Returns true if the application is currently running.
-     */
-    isPlaying: boolean;
-
-    /**
-     * Plays the animation.
-     */
-    public play: (view: View) => Promise<void>;
-
-    /**
-     * Cancels a playing animation.
-     */
-    public cancel: () => void;
-
-    /**
-     * Creates a keyframe animation from animation definition.
-     */
-    public static keyframeAnimationFromInfo(info: KeyframeAnimationInfo): KeyframeAnimation;
+interface Keyframe {
+    backgroundColor?: Color;
+    scale?: {
+        x: number;
+        y: number;
+    };
+    translate?: {
+        x: number;
+        y: number;
+    };
+    rotate?: number;
+    opacity?: number;
+    valueSource?: "keyframe" | "animation";
+    duration?: number;
+    curve?: any;
+    forceLayer?: boolean;
 }
+export declare class KeyframeAnimation implements KeyframeAnimationDefinition {
+    animations: Array<Keyframe>;
+    delay: number;
+    iterations: number;
+    private _resolve;
+    private _isPlaying;
+    private _isForwards;
+    private _nativeAnimations;
+    private _target;
+    static keyframeAnimationFromInfo(info: KeyframeAnimationInfo): KeyframeAnimation;
+    private static parseKeyframe;
+    readonly isPlaying: boolean;
+    cancel(): void;
+    play(view: View): Promise<void>;
+    private animate;
+    _resolveAnimationFinishedPromise(): void;
+    _resetAnimations(): void;
+    private _resetAnimationValues;
+}
+export {};
+//# sourceMappingURL=keyframe-animation.d.ts.map

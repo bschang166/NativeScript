@@ -1,0 +1,26 @@
+export declare function test_recycling(): void;
+export declare var testSetText: () => void;
+export declare var testOnClick: () => void;
+export declare var testBindTextDirectlyToModel: () => void;
+export declare var testBindTextToBindingContext: () => void;
+export declare var testLocalFontSizeFromCss: () => void;
+export declare var testNativeFontSizeFromCss: () => void;
+export declare var testNativeFontSizeFromLocal: () => void;
+export declare var testLocalColorFromCss: () => void;
+export declare var testNativeColorFromCss: () => void;
+export declare var testNativeColorFromLocal: () => void;
+export declare var testLocalBackgroundColorFromCss: () => void;
+export declare var testNativeBackgroundColorFromCss: () => void;
+export declare var testNativeBackgroundColorFromLocal: () => void;
+export declare var testMemoryLeak: (done: any) => void;
+export declare var testLocalTextAlignmentFromCss: () => void;
+export declare var testNativeTextAlignmentFromCss: () => void;
+export declare var test_StateHighlighted_also_fires_pressedState: () => void;
+export declare var test_StateHighlighted_also_fires_activeState: () => void;
+export declare var test_applying_disabled_visual_State_when_button_is_disable: () => void;
+export declare var testNativeTextAlignmentFromLocal: () => void;
+export declare var test_WhenFormattedTextPropertyChanges_TextIsUpdated_Button: () => void;
+export declare function test_IntegrationTest_Transform_Decoration_Spacing_WithoutFormattedText_DoesNotCrash(): void;
+export declare function test_IntegrationTest_Transform_Decoration_Spacing_WithFormattedText_DoesNotCrash(): void;
+export declare function test_setting_formattedText_With_UnknownFont_DoesNotCrash(): void;
+//# sourceMappingURL=button-tests.d.ts.map

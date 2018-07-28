@@ -1,0 +1,19 @@
+export declare function test_backstackVisible(): void;
+export declare function test_backstackVisible_WithTransition(): void;
+export declare function test_backToEntry(): void;
+export declare function test_backToEntry_WithTransition(): void;
+export declare function test_ClearHistory(): void;
+export declare function test_ClearHistory_WithTransition(): void;
+export declare function test_ClearHistoryWithTransitionDoesNotBreakNavigation(): void;
+export declare function test_ClearHistoryWithTransitionDoesNotBreakNavigation_WithLocalTransition(): void;
+export declare function test_NavigationEvents(): void;
+export declare function test_NavigationEvents_WithTransition(): void;
+export declare function test_NavigationEvents_WithBackstackVisibile_False_Forward_Back(): void;
+export declare function test_NavigationEvents_WithBackstackVisibile_False_Forward_Back_WithTransition(): void;
+export declare function test_NavigationEvents_WithBackstackVisibile_False_Forward_Forward(): void;
+export declare function test_NavigationEvents_WithBackstackVisibile_False_Forward_Forward_WithTransition(): void;
+export declare function test_NavigationEvents_WithClearHistory(): void;
+export declare function test_NavigationEvents_WithClearHistory_WithTransition(): void;
+export declare function test_Navigate_From_Page_Loaded_Handler(): void;
+export declare function test_Navigate_From_Page_NavigatedTo_Handler(): void;
+//# sourceMappingURL=navigation-tests.d.ts.map

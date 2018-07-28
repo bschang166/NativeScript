@@ -1,5 +1,7 @@
-import { ViewBase } from "../ui/core/view";
 import { CSSComputedStyleProperty } from "./css-agent";
+import { InspectorEvents } from "./devtools-elements";
+import { ViewBase } from "../ui/core/view";
+export declare function registerInspectorEvents(inspector: InspectorEvents): void;
 export declare function getNodeById(id: number): DOMNode;
 export declare class DOMNode {
     nodeId: any;
@@ -18,5 +20,6 @@ export declare class DOMNode {
     attributeRemoved(name: string): void;
     getComputedProperties(): CSSComputedStyleProperty[];
     dispose(): void;
-    toJSON(): string;
+    toObject(): any;
 }
+//# sourceMappingURL=dom-node.d.ts.map

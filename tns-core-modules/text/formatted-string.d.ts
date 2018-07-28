@@ -1,64 +1,32 @@
-﻿/**
- * Contains the FormattedString and Span classes, which are used to create a formatted (rich text) strings.
- * @module "text/formatted-string"
- */ /** */
-
+import { FormattedString as FormattedStringDefinition } from "./formatted-string";
 import { Span } from "./span";
 import { ObservableArray } from "../data/observable-array";
-import { ViewBase } from "../ui/core/view";
+import { ViewBase, AddArrayFromBuilder, AddChildFromBuilder } from "../ui/core/view";
 import { Color } from "../color";
 import { FontStyle, FontWeight } from "../ui/styling/font";
 import { TextDecoration } from "../ui/text-base";
-
 export { Span };
-
-/**
- * A class used to create a formatted (rich text) string.
- */
-export class FormattedString extends ViewBase {
-
-    /**
-     * An observable collection of Span objects used to define common text properties.
-     */
-    public spans: ObservableArray<Span>;
-
-    /**
-     * A human readable representation of the formatted string.
-     */
-    public toString(): string;
-
-    /**
-     * Gets or sets the font family which will be used for all spans that doesn't have a specific value.
-     */
-    public fontFamily: string;
-
-    /**
-     * Gets or sets the font size which will be used for all spans that doesn't have a specific value.
-     */
-    public fontSize: number;
-
-    /**
-     * Gets or sets the font style which will be used for all spans that doesn't have a specific value.
-     */
-    public fontStyle: FontStyle;
-
-    /**
-     * Gets or sets the font weight which will be used for all spans that doesn't have a specific value.
-     */
-    public fontWeight: FontWeight;
-
-    /**
-     * Gets or sets text decorations which will be used for all spans that doesn't have a specific value.
-     */
-    public textDecoration: TextDecoration;
-
-    /**
-     * Gets or sets the font foreground color which will be used for all spans that doesn't have a specific value.
-     */
-    public color: Color;
-
-    /**
-     * Gets or sets the font background color which will be used for all spans that doesn't have a specific value.
-     */
-    public backgroundColor: Color;
+export declare module knownCollections {
+    const spans = "spans";
 }
+export declare class FormattedString extends ViewBase implements FormattedStringDefinition, AddArrayFromBuilder, AddChildFromBuilder {
+    private _spans;
+    constructor();
+    fontFamily: string;
+    fontSize: number;
+    fontStyle: FontStyle;
+    fontWeight: FontWeight;
+    textDecoration: TextDecoration;
+    color: Color;
+    backgroundColor: Color;
+    readonly spans: ObservableArray<Span>;
+    toString(): string;
+    _addArrayFromBuilder(name: string, value: Array<any>): void;
+    _addChildFromBuilder(name: string, value: any): void;
+    private onSpansCollectionChanged;
+    private addPropertyChangeHandler;
+    private removePropertyChangeHandler;
+    private onPropertyChange;
+    eachChild(callback: (child: ViewBase) => boolean): void;
+}
+//# sourceMappingURL=formatted-string.d.ts.map

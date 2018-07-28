@@ -1,0 +1,26 @@
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
+export declare function testSetup(layout: StackLayout): string;
+export declare function testFlexboxLayout(layout: StackLayout): string;
+export declare function testDockLayout(layout: StackLayout): string;
+export declare function testGridLayout(layout: StackLayout): string;
+export declare function testStackLayout(layout: StackLayout): string;
+export declare function testWrapLayout(layout: StackLayout): string;
+export declare function testAbsoluteLayout(layout: StackLayout): string;
+export declare function testButton(layout: StackLayout): string;
+export declare function testActionBar(layout: StackLayout): string;
+export declare function testActivityIndicator(layout: StackLayout): string;
+export declare function testBorder(layout: StackLayout): string;
+export declare function testContentView(layout: StackLayout): string;
+export declare function testDatePicker(layout: StackLayout): string;
+export declare function testHtmlView(layout: StackLayout): string;
+export declare function testImage(layout: StackLayout): string;
+export declare function testLabel(layout: StackLayout): string;
+export declare function testListPicker(layout: StackLayout): string;
+export declare function testListView(layout: StackLayout): string;
+export declare function testPage(layout: StackLayout): string;
+export declare function testProgress(layout: StackLayout): string;
+export declare function testRepeater(layout: StackLayout): string;
+export declare function testSwitch(layout: StackLayout): string;
+export declare function testTextField(layout: StackLayout): string;
+export declare function testTextView(layout: StackLayout): string;
+//# sourceMappingURL=tests.d.ts.map

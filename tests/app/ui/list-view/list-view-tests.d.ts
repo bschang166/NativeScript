@@ -1,0 +1,65 @@
+import * as testModule from "../../ui-test";
+import * as listViewModule from "tns-core-modules/ui/list-view";
+export declare class ListViewTest extends testModule.UITest<listViewModule.ListView> {
+    create(): listViewModule.ListView;
+    test_recycling(): void;
+    test_default_TNS_values(): void;
+    test_set_items_to_array_loads_all_items(done: any): void;
+    test_set_native_item_exposed(): void;
+    test_cell_selection_ios(): void;
+    test_set_items_to_array_creates_native_views(): void;
+    test_refresh_after_adding_items_to_array_loads_new_items(): void;
+    test_refresh_reloads_all_items(): void;
+    test_set_itmes_to_null_clears_native_items(): void;
+    test_set_itmes_to_undefiend_clears_native_items(): void;
+    test_set_itmes_to_different_source_loads_new_items(): void;
+    test_set_items_to_observable_array_loads_all_items(): void;
+    test_add_to_observable_array_refreshes_the_listview(): void;
+    test_remove_from_observable_array_refreshes_the_listview(): void;
+    test_splice_observable_array_refreshes_the_listview(): void;
+    test_nativeTap_is_raised(): void;
+    test_loadMoreItems_raised_when_showing_few_items(): void;
+    test_loadMoreItems_not_raised_when_showing_many_items(): void;
+    test_loadMoreItems_is_raised_when_scroll_to_last_item(): void;
+    test_usingAppLevelConvertersInListViewItems(): void;
+    test_BindingListViewToASimpleArray(): void;
+    test_ItemTemplateFactoryFunction(): void;
+    test_BindingListViewToASimpleArrayWithExpression(): void;
+    test_bindingToParentObject(): void;
+    test_bindingToParentObjectWithSpacesInIndexer(): void;
+    test_ConverterIsCalledJustOnce_onAddingItemsToListView(): void;
+    test_RemovingChildViewsBeforeListView(): void;
+    test_no_memory_leak_when_items_is_regular_array(): void;
+    test_no_memory_leak_when_items_is_observable_array(): void;
+    test_call_refresh_when_items_is_simple_array_is_respcted_in_the_UI(): void;
+    test_LoadedUnloaded(): void;
+    test_view_in_itemLoading_is_not_collected_prematurely(): void;
+    test_check_if_item_at_index_is_visible(): void;
+    private checkItemVisibleAtIndex;
+    private assertNoMemoryLeak;
+    private loadViewWithItemNumber;
+    private getTextFromNativeElementAt;
+    private getNativeViewCount;
+    private performNativeItemTap;
+    private waitUntilListViewReady;
+    test_ItemTemplateSelector_WhenWrongTemplateKeyIsSpecified_TheDefaultTemplateIsUsed(): void;
+    test_ItemTemplateSelector_IsCorrectlyParsedFromString(): void;
+    test_ItemTemplateSelector_IsCorrectlyUsedAsAFunction(): void;
+    test_ItemTemplateSelector_ItemTemplatesAreCorrectlyParsedFromString(): void;
+    test_ItemTemplateSelector_CorrectTemplateIsUsed(): void;
+    test_ItemTemplateSelector_TestVirtualization(): void;
+    private _itemTemplatesString;
+    private static generateItemsForMultipleTemplatesTests;
+}
+interface Item {
+    text: string;
+    age: number;
+    loadedCount: number;
+    unloadedCount: number;
+    onViewLoaded: (args: any) => void;
+    onViewUnloaded: (args: any) => void;
+}
+export declare function createTestCase(): ListViewTest;
+export declare function selectItemTemplate(item: Item, index: number, items: Array<Item>): "red" | "green";
+export {};
+//# sourceMappingURL=list-view-tests.d.ts.map

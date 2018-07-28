@@ -1,0 +1,14 @@
+export declare function test_NavigateToNewPage_InnerControl(): void;
+export declare function test_WhenShowingModalPageUnloadedIsNotFiredForTheMasterPage(): void;
+export declare function test_correct_layout_top_bottom_edges_does_not_span_not_scrollable_not_flat(): void;
+export declare function test_correct_layout_top_bottom_edges_does_not_span_scrollable_not_flat(): void;
+export declare function test_correct_layout_top_bottom_edges_does_not_span_not_scrollable_flat(): void;
+export declare function test_correct_layout_top_bottom_edges_does_not_span_scrollable_flat(): void;
+export declare function test_correct_layout_scrollable_content_false(): void;
+export declare function test_correct_layout_scrollable_content_true(): void;
+export declare function test_correct_layout_scrollable_content_true_flat_action_bar(): void;
+export declare function test_correct_layout_scrollable_content_true_flat_action_bar_edges_span_under_opaque_bars(): void;
+export declare function test_correct_layout_scrollable_content_true_top_edge_does_not_span(): void;
+export declare function test_correct_layout_scrollable_content_true_bottom_edge_does_not_span(): void;
+export declare function test_showing_native_viewcontroller_doesnt_throw_exception(): void;
+//# sourceMappingURL=page-tests.ios.d.ts.map

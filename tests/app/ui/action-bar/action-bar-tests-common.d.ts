@@ -1,0 +1,24 @@
+import { Page } from "tns-core-modules/ui/page";
+export declare function test_actionItem_inherit_bindingContext(): void;
+export declare function test_actionBar_inherit_bindingContext_inXML(): void;
+export declare function test_actionItem_inherit_bindingContext_inXML(): void;
+export declare function test_actionItem_page_property_inXML(): void;
+export declare function test_actionItem_actionView_inXML(): void;
+export declare function test_actionItem_actionView_inherit_bindingContext_inXML(): void;
+export declare function test_ActionBar_is_not_empty_when_actionItem_actionView_is_set(): void;
+export declare function test_navigationButton_inherit_bindingContext_inXML(): void;
+export declare function test_titleView_inherit_bindingContext_inXML(): void;
+export declare function test_titleView_inXML(): void;
+export declare function test_titleView_inXML_short_definition(): void;
+export declare function test_ActionBar_is_not_empty_when_titleView_is_set(): void;
+export declare function test_ActionBarItemBindingToEvent(): void;
+export declare function test_Setting_ActionItems_doesnt_thrown(): void;
+export declare function test_Setting_ActionItemsWithNumberAsText_doesnt_thrown(): void;
+export declare function test_ActionBar_set_title_as_number_doesnt_thrown(): void;
+export declare function test_CanDefineEverythingAsContentBetweenTheTwoTags(): void;
+export declare function test_LoadedEventsOrder(): void;
+export declare function test_LoadedEventsOrder_WithoutPageContent(): void;
+export declare function test_setId(): void;
+export declare function createPageAndNavigate(): Page;
+export declare function test_recycling(): void;
+//# sourceMappingURL=action-bar-tests-common.d.ts.map

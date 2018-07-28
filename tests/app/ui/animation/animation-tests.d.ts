@@ -1,0 +1,28 @@
+export declare function test_AnimatingProperties(done: any): void;
+export declare function test_PlayRejectsWhenAlreadyPlayingAnimation(done: any): void;
+export declare function test_CancelIgnoredWhenNotPlayingAnimation(): void;
+export declare function test_CancellingAnimation(done: any): void;
+export declare function test_CancellingAnimate(done: any): void;
+export declare function test_ChainingAnimations(done: any): void;
+export declare function test_ReusingAnimations(done: any): void;
+export declare function test_AnimatingMultipleViews(done: any): void;
+export declare function test_AnimateOpacity(done: any): void;
+export declare function test_AnimateOpacity_ShouldThrow_IfNotNumber(): void;
+export declare function test_AnimateDelay_ShouldThrow_IfNotNumber(): void;
+export declare function test_AnimateDuration_ShouldThrow_IfNotNumber(): void;
+export declare function test_AnimateIterations_ShouldThrow_IfNotNumber(): void;
+export declare function test_AnimateRotate_ShouldThrow_IfNotNumber(): void;
+export declare function test_AnimateScale_ShouldThrow_IfNotPair(): void;
+export declare function test_AnimateTranslate_ShouldThrow_IfNotPair(): void;
+export declare function test_AnimateBackgroundColor_ShouldThrow_IfNotValidColorStringOrColor(): void;
+export declare function test_AnimateBackgroundColor(done: any): void;
+export declare function test_AnimateBackgroundColor_FromString(done: any): void;
+export declare function test_AnimateTranslate(done: any): void;
+export declare function test_AnimateScale(done: any): void;
+export declare function test_AnimateRotate(done: any): void;
+export declare function test_AnimateTranslateScaleAndRotateSimultaneously(done: any): void;
+export declare function test_AnimateTranslateScaleAndRotateSequentially(done: any): void;
+export declare function test_AnimationsAreAlwaysPlayed(done: any): void;
+export declare function test_PlayPromiseIsResolvedWhenAnimationFinishes(done: any): void;
+export declare function test_PlayPromiseIsRejectedWhenAnimationIsCancelled(done: any): void;
+//# sourceMappingURL=animation-tests.d.ts.map

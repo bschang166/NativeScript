@@ -1,0 +1,43 @@
+import { TextBase as TextBaseDefinition, TextAlignment, TextDecoration, TextTransform, WhiteSpace } from ".";
+import { FontStyle, FontWeight } from "../styling/font";
+import { PropertyChangeData } from "../../data/observable";
+import { View, ViewBase, Property, CssProperty, InheritedCssProperty, Style, Length } from "../core/view";
+import { FormattedString, Span } from "../../text/formatted-string";
+export { FormattedString, Span };
+export * from "../core/view";
+export declare abstract class TextBaseCommon extends View implements TextBaseDefinition {
+    _isSingleLine: boolean;
+    text: string;
+    formattedText: FormattedString;
+    fontFamily: string;
+    fontSize: number;
+    fontStyle: FontStyle;
+    fontWeight: FontWeight;
+    letterSpacing: number;
+    lineHeight: number;
+    textAlignment: TextAlignment;
+    textDecoration: TextDecoration;
+    textTransform: TextTransform;
+    whiteSpace: WhiteSpace;
+    padding: string | Length;
+    paddingTop: Length;
+    paddingRight: Length;
+    paddingBottom: Length;
+    paddingLeft: Length;
+    _onFormattedTextContentsChanged(data: PropertyChangeData): void;
+    _addChildFromBuilder(name: string, value: any): void;
+    _requestLayoutOnTextChanged(): void;
+    eachChild(callback: (child: ViewBase) => boolean): void;
+    _setNativeText(reset?: boolean): void;
+}
+export declare function isBold(fontWeight: FontWeight): boolean;
+export declare const textProperty: Property<TextBaseCommon, string>;
+export declare const formattedTextProperty: Property<TextBaseCommon, FormattedString>;
+export declare const textAlignmentProperty: InheritedCssProperty<Style, TextAlignment>;
+export declare const textTransformProperty: CssProperty<Style, TextTransform>;
+export declare const whiteSpaceProperty: CssProperty<Style, WhiteSpace>;
+export declare const textDecorationProperty: CssProperty<Style, TextDecoration>;
+export declare const letterSpacingProperty: CssProperty<Style, number>;
+export declare const lineHeightProperty: CssProperty<Style, number>;
+export declare const resetSymbol: unique symbol;
+//# sourceMappingURL=text-base-common.d.ts.map

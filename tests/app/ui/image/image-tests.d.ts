@@ -1,0 +1,21 @@
+export declare function test_recycling(): void;
+export declare const test_Image_Members: () => void;
+export declare const test_setting_src_to_resource: () => void;
+export declare const test_SettingImageSrcToURL_async: (done: any) => void;
+export declare const test_SettingImageSrcToFileWithinApp_sync: () => void;
+export declare const test_SettingImageSrcToFileWithinApp_async: (done: any) => void;
+export declare const test_SettingImageSrcToDataURI_sync: () => void;
+export declare const test_SettingImageSrcToDataURI_async: (done: any) => void;
+export declare function test_imageSourceNotResetAfterCreateUI(): void;
+export declare const __test_SettingImageSrcTwiceMustNotMismatch: (done: any) => void;
+export declare const test_SettingStretch_AspectFit: () => void;
+export declare const test_SettingStretch_Default: () => void;
+export declare const test_SettingStretch_AspectFill: () => void;
+export declare const test_SettingStretch_Fill: () => void;
+export declare const test_SettingStretch_none: () => void;
+export declare const test_SettingImageSourceWhenSizedToParentDoesNotRequestLayout: () => void;
+export declare const test_SettingImageSourceWhenFixedWidthAndHeightDoesNotRequestLayout: () => void;
+export declare const test_SettingImageSourceWhenSizedToContentShouldInvalidate: () => void;
+export declare const test_DimensionsAreRoundedAfterScale: () => void;
+export declare const test_tintColor: () => void;
+//# sourceMappingURL=image-tests.d.ts.map

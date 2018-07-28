@@ -1,21 +1,14 @@
-﻿/**
- * @module "ui/builder/binding-builder"
- * @private
- */ /** */
-
-//@private
-export module bindingConstants {
-    export var sourceProperty: string;
-    export var targetProperty: string;
-    export var expression: string;
-    export var twoWay: string;
-    export var source: string;
-    export var bindingValueKey: string;
-    export var parentValueKey: string;
-    export var parentsValueKey: string;
-    export var newPropertyValueKey: string;
+export declare module bindingConstants {
+    var sourceProperty: string;
+    var targetProperty: string;
+    var expression: string;
+    var twoWay: string;
+    var source: string;
+    var bindingValueKey: string;
+    var parentValueKey: string;
+    var parentsValueKey: string;
+    var newPropertyValueKey: string;
 }
-
-export function getBindingOptions(name: string, value: string): any;
-
-export var parentsRegex: RegExp;
+export declare var parentsRegex: RegExp;
+export declare function getBindingOptions(name: string, value: string): any;
+//# sourceMappingURL=binding-builder.d.ts.map

@@ -1,0 +1,68 @@
+import { Frame as FrameDefinition, NavigationEntry, BackstackEntry, NavigationTransition } from ".";
+import { Page } from "../page";
+import { View, CustomLayoutView, Property } from "../core/view";
+export * from "../core/view";
+export interface NavigationContext {
+    entry: BackstackEntry;
+    isBackNavigation: boolean;
+}
+export declare class FrameBase extends CustomLayoutView implements FrameDefinition {
+    static androidOptionSelectedEvent: string;
+    private _animated;
+    private _transition;
+    private _backStack;
+    private _navigationQueue;
+    _currentEntry: BackstackEntry;
+    _executingEntry: BackstackEntry;
+    _isInFrameStack: boolean;
+    static defaultAnimatedNavigation: boolean;
+    static defaultTransition: NavigationTransition;
+    _addChildFromBuilder(name: string, value: any): void;
+    onLoaded(): void;
+    canGoBack(): boolean;
+    goBack(backstackEntry?: BackstackEntry): void;
+    _removeEntry(removed: BackstackEntry): void;
+    navigate(param: any): void;
+    isCurrent(entry: BackstackEntry): boolean;
+    setCurrent(entry: BackstackEntry, isBack: boolean): void;
+    _updateBackstack(entry: BackstackEntry, isBack: boolean): void;
+    private raiseCurrentPageNavigatedEvents;
+    _processNavigationQueue(page: Page): void;
+    _findEntryForTag(fragmentTag: string): BackstackEntry;
+    navigationQueueIsEmpty(): boolean;
+    static _isEntryBackstackVisible(entry: BackstackEntry): boolean;
+    _updateActionBar(page?: Page, disableNavBarAnimation?: boolean): void;
+    protected _processNextNavigationEntry(): void;
+    private performNavigation;
+    private performGoBack;
+    _goBackCore(backstackEntry: BackstackEntry): void;
+    _navigateCore(backstackEntry: BackstackEntry): void;
+    _onNavigatingTo(backstackEntry: BackstackEntry, isBack: boolean): void;
+    animated: boolean;
+    transition: NavigationTransition;
+    readonly backStack: Array<BackstackEntry>;
+    readonly currentPage: Page;
+    readonly currentEntry: NavigationEntry;
+    _pushInFrameStack(): void;
+    _popFromFrameStack(): void;
+    _removeFromFrameStack(): void;
+    _dialogClosed(): void;
+    _onRootViewReset(): void;
+    readonly _childrenCount: number;
+    eachChildView(callback: (child: View) => boolean): void;
+    _getIsAnimatedNavigation(entry: NavigationEntry): boolean;
+    _getNavigationTransition(entry: NavigationEntry): NavigationTransition;
+    readonly navigationBarHeight: number;
+    _getNavBarVisible(page: Page): boolean;
+    _addViewToNativeVisualTree(child: View): boolean;
+    _removeViewFromNativeVisualTree(child: View): void;
+    _printFrameBackStack(): void;
+    _backstackEntryTrace(b: BackstackEntry): string;
+    _onLivesync(): boolean;
+}
+export declare function getFrameById(id: string): FrameBase;
+export declare function topmost(): FrameBase;
+export declare function goBack(): boolean;
+export declare function stack(): Array<FrameBase>;
+export declare const defaultPage: Property<FrameBase, string>;
+//# sourceMappingURL=frame-common.d.ts.map

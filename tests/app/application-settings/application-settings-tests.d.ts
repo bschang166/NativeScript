@@ -1,0 +1,12 @@
+export declare var testBoolean: () => void;
+export declare var testString: () => void;
+export declare var testNumber: () => void;
+export declare var testDefaults: () => void;
+export declare var testDefaultsWithNoDefaultValueProvided: () => void;
+export declare var testHasKey: () => void;
+export declare var testRemove: () => void;
+export declare var testClear: () => void;
+export declare var testFlush: () => void;
+export declare var testInvalidKey: () => void;
+export declare var testInvalidValue: () => void;
+//# sourceMappingURL=application-settings-tests.d.ts.map
